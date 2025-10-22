@@ -1,0 +1,14 @@
+<div class="mb-3">
+  <div class="input-group">
+    <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="title" 
+      placeholder="Nueva tarea..." 
+      (keyup.enter)="add()" />
+    <button class="btn btn-primary" (click)="add()">
+      <i class="bi bi-plus-circle"></i> Agregar
+    </button>
+  </div>
+  <div class="text-danger small mt-1" *ngIf="error">{{ error }}</div>
+</div>

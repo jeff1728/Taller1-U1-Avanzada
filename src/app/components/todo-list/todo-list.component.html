@@ -1,0 +1,14 @@
+<ul class="list-group" *ngIf="todos.length > 0; else empty">
+  <app-todo-item
+    *ngFor="let t of todos"
+    [todo]="t"
+    (toggle)="toggle.emit(t.id)"
+    (delete)="delete.emit(t.id)">
+  </app-todo-item>
+</ul>
+
+<ng-template #empty>
+  <div class="alert alert-info text-center" role="alert">
+    <i class="bi bi-info-circle"></i> No hay tareas. ¡Agrega una nueva!
+  </div>
+</ng-template>
